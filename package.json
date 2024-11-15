@@ -1,0 +1,14 @@
+{
+  "name": "localstack-cognito-idp-bug",
+  "version": "0.0.0",
+  "description": "Full reproduction of the clientMetadata bug in Localstack's paid Cognito mock",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "UNLICENSED",
+  "private": true,
+  "devDependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.693.0",
+    "@aws-sdk/client-lambda": "^3.693.0"
+  }
+}

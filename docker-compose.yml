@@ -1,0 +1,20 @@
+services:
+  localstack:
+    image: localstack/localstack-pro:3.8.1
+    ports:
+      - '4566:4566'
+    environment:
+      - SERVICES=lambda,events,logs,cognito-idp,s3
+      - AWS_ACCESS_KEY_ID=abcdefg123
+      - AWS_SECRET_ACCESS_KEY=abcdefg1234567890000
+      - AWS_REGION=us-east-1
+      - DEBUG=${DEBUG:-0}
+      # uncomment this next line to see detailed logs
+      # - LS_LOG=trace-internal
+      - DOCKER_HOST=unix:///var/run/docker.sock
+      - LOCALSTACK_AUTH_TOKEN=${LOCALSTACK_AUTH_TOKEN}
+      - PERSISTENCE=1
+      - LAMBDA_MOUNT_CWD=${LAMBDA_MOUNT_CWD}
+    volumes:
+      - "${LOCALSTACK_VOLUME_DIR:-./.cache/localstack/volume}:/var/lib/localstack"
+      - /var/run/docker.sock:/var/run/docker.sock
