@@ -4,7 +4,7 @@ Full reproduction of the clientMetadata bug in Localstack's paid Cognito mock
 
 ### Steps
 
-1. Copy `.env.example` to `.env` and add follow the instructions in the file.
+1. Copy `.env.example` to `.env` and follow the instructions in the file.
 1. Run `npm install`
 1. Run `docker compose up --build`
 
